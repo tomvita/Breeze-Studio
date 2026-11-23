@@ -2,7 +2,9 @@
 
 ## [0.05] - 2026-11-23
 
-First release on its own. Use with Breeze **beta129.04** or later on a Switch (nothing on the Switch changed), emuhost 0.5, and **pchost 0.6a** for games on the PC (0.6a replaced 0.6 in this release on Nov 23).
+First release on its own. Use with Breeze **beta129.04** or later on a Switch (nothing on the Switch changed), emuhost 0.5, and **pchost 0.6b** for games on the PC (0.6a replaced 0.6 in this release on Nov 23; 0.6b was added beside it the same day).
+
+- **pchost 0.6b: Unreal maps on Moadra.** 0.6a took a table inside the exe for the object list (40,000 objects, no player) and a world pointer that is empty between levels; 0.6b finds the real list (107,022 objects) and GWorld. Maps built with 0.6a: delete `ue_object_array.txt` and `ue_profile.ini` and build again.
 
 - **pchost 0.6a: cheat window.** A list of the cheats with a check box each opens when the cheat file has cheats (Ctrl+Alt+C shows or hides it), so cheats can be switched without Studio or Python. A tick is saved in `toggles.txt`; folders show as headings, and a Keys column names the buttons a key cheat waits for.
 
