@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.07] - 2026-11-23
+
+Use with Breeze **beta129.04** or later (nothing on the Switch changed), emuhost 0.5, and **pchost 0.6c** for games on the PC (the same as in 0.06).
+
+- **Memory tab, like Breeze's Memory Explorer:** a pointer chain on top (`main+44298C0 › +B8 › +0 › +30 › +208 › +20`) with the step the cursor is on highlighted; picking a row moves its offset, following a pointer adds a step, **◀ / ▶** walk the chain (steps gone back from stay greyed), pages move the cursor. Each read resolves the chain again, so the view follows an object the game moves. Chains come along from Bookmarks, Objects, pointer scans and Cheats.
+- **Field view in Memory:** when the cursor is in an object Studio knows (Unity, Unreal), the page is that object, field by field, with each field's own type.
+- **Smart display:** one detected value per row (pointer, double, float, text, integer, 32.32 fixed); **Detection...** sets each detector's limits, on/off and order. Right-click > **Show as** sets one value's type by hand, kept per game.
+- **Make cheat and bookmarks from Memory:** the row's chain from main and a store of the value you set; Add to bookmarks (Studio) or to Breeze's bookmarks; Copy chain.
+- **Cheats > Jump to target** goes to the cheat's last address (the value it writes) with its pointer chain, which the cheat reader now follows through `5`, `7`, `9` and `4` opcodes.
+- **Value pop-up:** editing a value (Memory, Workbench, Objects, Bookmarks, a cheat line) shows it as decimal, hex, float 32 and float 64 at once; type in one, the others follow. On a cheat line the opcode sets which words are the value and how wide (`400E0000 00000000 00002710`: 8 bytes).
+- **Search: a label column** names the field each candidate sits on (`TextTween+20 target`, `Entry<int, int>[]+2C [0].value`).
+- **Unity:** Field view, labels and Find chain work inside arrays (a dictionary's entries: coins in Land of Glarefall are `BagData.instance > basedata > _entries > [0].value`). Field view stopped working for the rest of a session after one array address: fixed.
+- **Memory: Open in Memory on the page already shown** now picks its row (it did nothing).
+
 ## [0.06] - 2026-11-23
 
 Use with Breeze **beta129.04** or later (beta129.06 has the same GAS cap rules on the Switch), emuhost 0.5, and **pchost 0.6c** for games on the PC.
