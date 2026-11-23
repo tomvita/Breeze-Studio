@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.06] - 2026-11-23
+
+Use with Breeze **beta129.04** or later (beta129.06 has the same GAS cap rules on the Switch), emuhost 0.5, and **pchost 0.6c** for games on the PC.
+
+- **GAS attributes (Objects tab, Unreal):** **(attributes, GAS)** lists every attribute of the player with its value and cap, found by reflection. Pick several, right-click > **Make cheats (attributes)...**: fill-from-cap and set cheats with off cheats, **Add all**, then **Try them** checks each one on the game. Caps are paired as `XMax`, `MaxX`, `CurrentX` > `MaxX`, `HealthPower` > `MaxHealth`, or set by hand.
+- **pchost 0.6c:** Unreal 5.8 names on the PC (Revenge of the Mage had every class as "None_<n>"). Delete `ue_profile.ini` of a game that 0.6b mapped that way.
+- **Studio reads Unreal 5.8 fields:** the Objects tab showed no fields on a 5.8 game.
+
 ## [0.05] - 2026-11-23
 
 First release on its own. Use with Breeze **beta129.04** or later on a Switch (nothing on the Switch changed), emuhost 0.5, and **pchost 0.6b** for games on the PC (0.6a replaced 0.6 in this release on Nov 23; 0.6b was added beside it the same day).
