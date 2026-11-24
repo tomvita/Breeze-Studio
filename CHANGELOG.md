@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.08] - 2026-11-24
+
+Use with Breeze **beta129.04** or later (nothing on the Switch changed), emuhost 0.5, and **pchost 0.6d** for games on the PC.
+
+- **Beside:** when one tab sends you to another (Open in Memory, Field view, Jump to target, Open in Code...), that tab opens as a window of its own next to the one you were in, fitted to what it shows, instead of taking its place. The next action of the same kind reuses that window. A check box in the header turns it off.
+- **Mouse back and forward buttons** step through the views of Memory, Objects and Code. Memory and Objects got Forward.
+- **Fit** (header) makes the window as small as it can be with everything in the tab shown, and **rows** sets the most rows Fit gives one table or list. **On top** keeps Studio and its windows above the game.
+- **Cheats and Bookmarks keep up by themselves:** a cheat added, removed or switched elsewhere shows within 1.5 s (an edit you have not applied is kept); a bookmark added from Memory, Search, Workbench or Objects shows without Reload.
+- **pchost 0.6d:** cheats run while the game is paused, so a Resume Game cheat can resume it (only F9 could).
+- **Fixed:** the Objects tab lost **(attributes, GAS)** once the Unreal class list was read; a class whose parent is missing from the map showed gaps instead of the inherited fields; bookmarks from Objects landed in the Bookmarks group when that group came later in the file.
+
 ## [0.07] - 2026-11-23
 
 Use with Breeze **beta129.04** or later (nothing on the Switch changed), emuhost 0.5, and **pchost 0.6c** for games on the PC (the same as in 0.06).
