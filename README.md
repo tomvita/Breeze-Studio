@@ -21,7 +21,7 @@ Studio release to use with it, and each Studio release names the Breeze it needs
 | You use Studio with | First | Address | Code |
 |---|---|---|---|
 | a Switch | open Breeze, turn on Settings > PC connect (same network as the PC) | the IP Breeze shows | the code Breeze shows |
-| the Lichii fork | Configure > Debug > Enable PC connect, start a game | `127.0.0.1` | the code shown there |
+| the Lichii fork from tomvita | Configure > Debug > Enable PC connect, start a game | `127.0.0.1` | the code shown there |
 | another yuzu-family emulator | turn on Enable GDB stub in its Debug settings, start the game, then `emuhost.exe` (`emuhost_<version>.zip`) | `127.0.0.1` | `1234` |
 | a game on this PC (64-bit Windows) | start the game, then `pchost.exe` (`pchost_<version>.zip`) | `127.0.0.1` | `1234` |
 
