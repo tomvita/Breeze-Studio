@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.09] - 2026-11-25
+
+Use with Breeze **beta129.04** or later (nothing on the Switch changed), emuhost 0.5, and **pchost 0.6g** for games on the PC.
+
+- **Pointer scan keeps the chains a cheat uses (pchost 0.6g):** a pointer that can lead on through several objects is followed through all of them (only the nearest was), and the last level no longer stops early when it holds too many objects. The Killing Stone's card battle chain was missing; now it is among the first 5,000 of about 20,000, in the same 12 s.
+- **Pointers tab:** pointer chains in a tab of their own, every scan kept per game. **Find target by chains** puts the place the chains reach that holds the value in the Address box after the value moved, instead of a new search. **Remove broken**, **Auto clear** (broken / not the value / not the target, once or every 3 s, never down to nothing) and **Undo**. Chains kept by a scan: 5,000 at first (was 500).
+- **Faster chain reads:** `chains` (new on pchost) reads 1,000 chains a request; 5,000 in 0.17 s instead of 1.5 s.
+- **Find chain on Unreal:** named fields first (The Killing Stone: 110 s, was nothing in 937 s), value rows too (Sackboy's TrophyPoints), memory read once into an index (Sackboy 70-90 s -> 16 s), progress shown in the pane.
+- **Cheats > What it does** reads again every 2 s while shown. **GAS view** says "in a menu?" at a main menu.
+
 ## [0.08] - 2026-11-24
 
 Use with Breeze **beta129.04** or later (nothing on the Switch changed), emuhost 0.5, and **pchost 0.6d** for games on the PC.
