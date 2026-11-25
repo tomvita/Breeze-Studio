@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.10] - 2026-11-25
+
+Use with Breeze **beta129.04** or later (nothing on the Switch changed), **emuhost 0.6** for an emulator and **pchost 0.6g** for games on the PC (both the same as in 0.09).
+
+- **First start without Pillow or capstone:** a message box lists the missing packages and installs them if you say Yes (pip in a window you can watch). Before, Studio started from the .bat showed nothing at all.
+- **A failed Connect says why:** "nothing answers at 127.0.0.1:6801" (nothing is listening: turn on PC connect, start emuhost or pchost), "no answer from ..." (wrong IP, Switch asleep, another network), "... is not an address"; the Start tab lists what to check. A wrong code already said where the right one is.
+- **The Start tab covers every target:** a Switch, the Lichii fork, another emulator through emuhost (turn on its GDB stub first) and a PC game through pchost, each with the address and code to type.
+- **README: First time** - install Python, unzip, start, and a table of what to start and type for each target.
+
 ## [0.09] - 2026-11-25
 
 Use with Breeze **beta129.04** or later (nothing on the Switch changed), **emuhost 0.6** (added on Nov 25; released here from now on, 0.5 was in Breeze beta129.04) for an emulator, and **pchost 0.6g** for games on the PC.
