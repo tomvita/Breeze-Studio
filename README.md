@@ -39,7 +39,8 @@ Each [release](https://github.com/tomvita/Breeze-Studio/releases) has:
   (from 0.6, released here; 0.5 was in Breeze beta129.04). Turn on the emulator's GDB stub, start the
   game, then emuhost; connect Studio to 127.0.0.1, code 1234.
 - **`pchost_<version>.zip`**: `pchost.exe`, for games on the PC (64-bit Windows). Start the game,
-  then pchost; connect Studio to 127.0.0.1, code 1234.
+  then pchost; connect Studio to 127.0.0.1, code 1234. From 0.7 it holds `breeze_mono.dll` too
+  (Unity Mono games): keep it beside `pchost.exe`.
 
 A release whose notes say "added" also got a newer emuhost or pchost after it came out.
 

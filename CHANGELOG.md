@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.11] - 2026-11-26
+
+Use with Breeze **beta129.04** or later (nothing on the Switch changed), **emuhost 0.6** for an emulator (the same as in 0.09) and **pchost 0.7** for games on the PC (new; `breeze_mono.dll` comes with it, keep it beside `pchost.exe`).
+
+- **Unity Mono games on the PC (pchost 0.7):** a Unity game built with Mono has no IL2CPP map, so pchost reads one from the game's own Mono runtime through `breeze_mono.dll` (MOUSE: P.I. For Hire: 23,343 classes in 0.3 s, the game kept running). Objects, Memory's field names, Find chain, Pointers and Make cheat work on it. A chain starts at a class's statics, written `{Player}`, and a cheat made from it works in every run: `roots.txt` beside the cheat file names the class for a static register, which pchost fills before each cheat pass (also `{mod:UnityPlayer.dll}` and `{fn:Class::Method}`).
+- **x64 code cheats, Cheat Engine style (pchost 0.7):** an AOB cheat finds its code by a byte pattern, puts a cave near it and hooks it while on; off puts the game's bytes back. Code tab > right-click > **Make AOB hook** builds one from an instruction; Cheats > **Import CE table** turns a .ct's AOB injection scripts into cheats.
+- **pchost toggle keys:** a key or pad combo per cheat, with a high beep on and a low beep off, set in pchost's cheat window or Studio's Cheats tab (Toggle key...).
+- **What code ran and the instruction watch (F8) on PC games (pchost 0.7):** What code ran lists every function of the exe that ran, with a **this** column (the object a method ran on). F8 on an instruction lists the addresses it reaches, so at a method's start it lists its instances. Neither writes the game's code permanently.
+- **Methods:** Objects > Methods lists a class's functions with its parents' (IL2CPP, Mono, Unreal with Blueprint functions); the Code tab has **Class of this function** and **Who uses this function**.
+- **Unreal, one object list for every tab:** Objects, Memory and Search shared nothing and each read the whole list. Now the first one publishes it; with pchost 0.7's new `peekn` the names are ready in 1.9 s instead of 8.7 s (Queen's Domain, 528,400 objects). Memory names fields of objects over 4 KB (it showed none). Make cheat: **= Field** keeps a value equal to another field (a count to its cap).
+- **Memory stays still:** live values 4 times a second, only the rows on screen redrawn, the rows kept as they are between refreshes, and a pointer of the chain that breaks for one read is not followed (the page jumped away and back).
+- **Windows:** each detached window has its own **Fit** and **Dock**; a new window grows as its rows come in until you move or resize it; **Ctrl+Tab** / **Ctrl+Shift+Tab**, **Ctrl+1..9, Ctrl+0** and **Ctrl+Space** (type a few letters) switch tabs and windows; dialogs open in the middle of the screen Studio is on.
+
 ## [0.10] - 2026-11-25
 
 Use with Breeze **beta129.04** or later (nothing on the Switch changed), **emuhost 0.6** for an emulator and **pchost 0.6g** for games on the PC (both the same as in 0.09).
