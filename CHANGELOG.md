@@ -1,6 +1,12 @@
 # Changelog
 
-## [0.11] - 2026-11-26
+## [0.11] - 2026-11-26 (emuhost 0.6a and pchost 0.7a added on 2026-11-27)
+
+Added to the 0.11 release on Nov 27, beside 0.6 and 0.7 (Studio itself, `pc_app.zip`, is unchanged):
+
+- **emuhost 0.6a: a breakpoint inside an ASM cheat's code cave stays.** The cheat rewrites its cave on every pass, and that write went over the breakpoint, so F9 there missed the code running. Now an unchanged cave is not written again, and a real change goes in under the breakpoint. Tested on stock Eden: with 0.6 the cheat's next pass wrote over the breakpoint, and once the cave had changed it never stopped again; 0.6a kept it through every pass.
+- **pchost 0.7a: What code ran with a code cheat on.** A cheat writing over a function's first bytes removed What code ran's break there (the function never showed), and **Stop** then put the old first byte back into the cheat's `jmp`, which crashed the game when that function ran next. Now the break stays and Stop leaves the cheat's bytes alone. Tested on a test program: 0.7 crashed after Stop, 0.7a ran on in all three orders.
+
 
 Use with Breeze **beta129.04** or later (nothing on the Switch changed), **emuhost 0.6** for an emulator (the same as in 0.09) and **pchost 0.7** for games on the PC (new; `breeze_mono.dll` comes with it, keep it beside `pchost.exe`).
 
