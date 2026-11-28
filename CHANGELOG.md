@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.12] - 2026-11-28
+
+Use with Breeze **beta129.04** or later (nothing on the Switch needs changing), **emuhost 0.6a** for an emulator and **pchost 0.7a** for games on the PC (both the same as in 0.11).
+
+- **Cheats: changes not saved to SD are shown.** A red line above the status names each cheat that is new, edited or deleted since the list was last loaded or saved, and the button reads **Save to SD \***. Before, an edit that was never saved was lost without a word when the game started again: the game loaded the old cheat from the SD. Edits made outside the tab (another tab, a helper over PC connect) count too, since the code is read every 6 s. Turning cheats on and off does not count.
+- **Code: Refresh (Ctrl+R).** The Code tab keeps the code it has read, so a hook or patch that an ASM cheat wrote afterwards did not show until Studio was restarted. **Refresh** beside Decompile reads it again (also what Callers searches on a PC game).
+- **Hook here keeps the ASM source.** Add cheat saves the script with the cheat (`studio_hook_sources.json` in the game's folder). **Edit source** on the Cheats tab reopens it in Hook here, and **Replace cheat** puts the new code into that cheat. **Hook sources...** lists every saved source, including those of deleted cheats, to open, copy or delete.
+- **Hook here / Patch never take a debugger break as the original.** Under a break, both used to read `brk` as the game's instruction: a hook ran it in its cave, and turning the cheat off wrote it into the game for good. They now ask the host what the break replaced, and refuse when it cannot say.
+- **Set in the game:** a strip under the header shows the breaks and watches the game has now (amber when something is set, red when a thread is held); click it to remove them. Closing Studio asks whether to remove what is still set. Every break and watch Studio set is kept per game build and can be turned on again.
+- **Objects > Instances:** every object of a class and its subclasses, in a window of its own, each marked live, live? or stale? by who points at it and named by its holder (`UnitManager.unitPool[10][0]`). Group by holder, filter by values (`currentHp > 0`), and add the class's fields as columns. Hadean Tactics on Lichii: all 829 Units in 4 s.
+- **Cheats > What it does names each hop** on a Unity IL2CPP game with a field map: `writes 850 (int) to ForgeUI.instance > focusables[0] > _unit > currentHp`, with the value shown as its field's type.
+- **Code: "also" columns on an instruction watch:** `+78 f32, +48 s32` adds a column per offset from the watched address's register (a unit's mana and team beside the HP the instruction reads).
+- **Memory:** an 8-byte value counts as a pointer only when it points into readable memory (doubles, hashes and text showed as pointers: 1,177 false ones in 256 KB of Hadean Tactics' heap).
+- **Files:** Windows' own right-click menu on both sides, and for a host on this PC (Lichii, emuhost, pchost) the SD card side shows full Windows paths.
+- **Saved cheat files** start with `[Breeze Studio 0.12 <game> ... TID: ... BID: ...]`, so you can tell who wrote them.
+- **Windows** left on a screen that is gone (a monitor unplugged, the display mode switched) come back onto the nearest one.
+
 ## [0.11] - 2026-11-26 (emuhost 0.6a and pchost 0.7a added on 2026-11-27)
 
 Added to the 0.11 release on Nov 27, beside 0.6 and 0.7 (Studio itself, `pc_app.zip`, is unchanged):
